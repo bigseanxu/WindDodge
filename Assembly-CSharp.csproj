@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{3662B5FA-A6CB-0A59-CE09-E3CDB590DF07}</ProjectGuid>
+	<ProjectGuid>{F5BD4DB5-29F2-F217-EED1-B93D87DFBDB3}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -245,7 +245,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>/Users/xujihao/projects/wind/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>/Users/xujihao/Desktop/reposition/WindDodge/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -90,9 +90,11 @@ public class GameEntrance : MonoBehaviour {
 //		todo.GetComponent<Button> ().interactable = false;
 
 		GameObject music = GameObject.Find ("Music");
-		music.GetComponent<Animator> ().Play ("Music");
-		music.GetComponent<Toggle> ().interactable = false;
-
+		if (music != null) {
+			music.GetComponent<Animator> ().Play ("Music");
+			music.GetComponent<Toggle> ().interactable = false;
+		}
+		
 		GameObject sound = GameObject.Find ("Sound");
 		sound.GetComponent<Animator> ().Play ("Sound");
 		sound.GetComponent<Toggle> ().interactable = false;

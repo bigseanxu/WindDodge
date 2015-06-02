@@ -96,7 +96,7 @@ PlayerSettings:
   preloadShaders: 0
   StripUnusedMeshComponents: 0
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 22
+  iPhoneTargetOSVersion: 28
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIStatusBarHidden: 1
@@ -105,21 +105,21 @@ PlayerSettings:
   iPhoneSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec, type: 3}
   iPhoneHighResSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPhone47inSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPhone47inSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
   iPhone55inPortraitSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
   iPhone55inLandscapeSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPadPortraitSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPadPortraitSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPadLandscapeSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPadLandscapeSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
-  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: ae94e0d0b5da8074bb3e60d2921605ce,
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: e03325ca46b164b6db28db4b96a8b4ec,
     type: 3}
   iOSLaunchScreenType: 0
   iOSLaunchScreenPortrait: {fileID: 0}
@@ -152,21 +152,24 @@ PlayerSettings:
     m_Icons:
     - m_Icon: {fileID: 2800000, guid: edf48270e8cd14986b766fd9b31e6ca2, type: 3}
       m_Size: 180
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: da96469a8241b4b19adeb2217f271e4f, type: 3}
       m_Size: 152
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 4c4b09da56e104b0e892cccd7fc1ceae, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: d74b493ce5bf64a0a95140d238bbb0a1, type: 3}
       m_Size: 120
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 72d12970b515d46e1869617be7010d96, type: 3}
       m_Size: 114
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: d17cf2ced1c1042a08376f9bb6ed122b, type: 3}
       m_Size: 76
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 2ef8f0a74c3704321969455521d0fcd0, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 2035bc4e8ce7c425ab6073af23bc332a, type: 3}
       m_Size: 57
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: iPhone
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   actionOnDotNetUnhandledException: 1
@@ -414,8 +417,8 @@ PlayerSettings:
   WebGL::audioCompressionFormat: 4
   WebGL::exceptionSupport: 0
   WebGL::memorySize: 256
-  iOS::Architecture: 0
-  iOS::ScriptingBackend: 0
+  iOS::Architecture: 2
+  iOS::ScriptingBackend: 1
   boolPropertyNames:
   - WebGL::dataCaching
   - XboxOne::enus
