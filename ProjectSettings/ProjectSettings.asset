@@ -130,10 +130,10 @@ PlayerSettings:
   iOSLaunchScreenFillPct: 1
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
-  AndroidTargetDevice: 0
-  AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidTargetDevice: 3
+  AndroidSplashScreenScale: 2
+  AndroidKeystoreName: /Users/xujihao/Desktop/cooreandroid.keystore
+  AndroidKeyaliasName: coore.xujihao
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -166,6 +166,20 @@ PlayerSettings:
       m_Size: 72
     - m_Icon: {fileID: 2800000, guid: 2035bc4e8ce7c425ab6073af23bc332a, type: 3}
       m_Size: 57
+  - m_BuildTarget: Android
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: e813e5e4d91f04d06843a97eb9bf25e8, type: 3}
+      m_Size: 192
+    - m_Icon: {fileID: 2800000, guid: 4c4b09da56e104b0e892cccd7fc1ceae, type: 3}
+      m_Size: 144
+    - m_Icon: {fileID: 2800000, guid: 1c07f45492a04455ba5dcbc0bb0f38e8, type: 3}
+      m_Size: 96
+    - m_Icon: {fileID: 2800000, guid: 2ef8f0a74c3704321969455521d0fcd0, type: 3}
+      m_Size: 72
+    - m_Icon: {fileID: 2800000, guid: 378014e140dc5453f910fa869bcac885, type: 3}
+      m_Size: 48
+    - m_Icon: {fileID: 2800000, guid: 7cc3677d0fedc4f6b9762fefcad5c071, type: 3}
+      m_Size: 36
   m_BuildTargetBatching:
   - m_BuildTarget: iPhone
     m_StaticBatching: 1

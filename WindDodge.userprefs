@@ -1,12 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameEntrance.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SocialNetworking.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameEntrance.cs" Line="98" Column="48" />
+      <File FileName="Assets/Scripts/GameCenter.cs" Line="83" Column="36" />
+      <File FileName="Assets/Scripts/GameObjectPool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScreenDirector.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShowNumber.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SocialNetworking.cs" Line="22" Column="7" />
+      <File FileName="Assets/Scripts/HeroBall.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BestTime.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/xujihao/Desktop/reposition/WindDodge/Assets/Scripts/PaperEmitter.cs" line="70" />
+      <Breakpoint file="/Users/xujihao/Desktop/reposition/WindDodge/Assets/Scripts/PaperEmitter.cs" line="37" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -19,7 +19,11 @@ public class ScreenDirector : MonoBehaviour {
 	public Transform shareImageGenerator;
 	public Color gameOverBgColor = new Color(171, 169, 167, 255);
 
+#if UNITY_ANDROID
+	string umengAppkey = "557ea3a867e58e7a2500157c";
+#else
 	string umengAppkey = "5566828d67e58e6ccb0017bf";
+#endif
 
 
 	// Use this for initialization
@@ -63,6 +67,7 @@ public class ScreenDirector : MonoBehaviour {
 
 			shareImageGenerator.GetComponent<ShowNumberInCanvas> ().SetNumber(current);
 			shareImageGenerator.GetComponent<ShareImageGenerator> ().TakeHiResShot ();
+		
 			//	Debug.Log ("current is " + current + " best is " + best);
 
 			if (current > best) {

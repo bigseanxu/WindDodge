@@ -16,6 +16,7 @@ public class BestTime : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		//int fps = (int)(1.0f / Time.deltaTime);
+		//GetComponent<Text> ().text = fps.ToString ();
 	}
 }

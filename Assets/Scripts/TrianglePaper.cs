@@ -61,7 +61,8 @@ public class TrianglePaper : MonoBehaviour {
 //			Debug.Log ("hahhaha");
 //		}
 		if (transform.position.y < -20) {
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			transform.parent.gameObject.GetComponent<PaperEmitter>().gameObjectPool.Destroy(gameObject);
 		}
 
 	}

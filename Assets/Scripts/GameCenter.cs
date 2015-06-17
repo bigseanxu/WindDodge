@@ -2,10 +2,21 @@
 using System.Collections;
 using UnityEngine.SocialPlatforms.GameCenter;
 using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 public class GameCenter : MonoBehaviour {
-
+#if UNITY_ANDROID
+	bool isPlayGamesPlayformActivate = false;
+#endif
 	// Use this for initialization
 	void Start () {
+#if UNITY_ANDROID
+		if (!isPlayGamesPlayformActivate) {
+			isPlayGamesPlayformActivate = true;
+			PlayGamesPlatform.Activate();
+			Debug.Log("PlayGamesPlatform.Activate()");
+		}
+#endif
 		Social.localUser.Authenticate (ProcessAuthentication);
 	}
 	
@@ -17,6 +28,7 @@ public class GameCenter : MonoBehaviour {
 	// This function gets called when Authenticate completes
 	// Note that if the operation is successful, Social.localUser will contain data from the server. 
 	void ProcessAuthentication (bool success) {
+		Debug.Log ("mr.x on ProcessAuthentication");
 		if (success) {
 			Debug.Log ("Authenticated, checking achievements");
 			
@@ -59,11 +71,20 @@ public class GameCenter : MonoBehaviour {
 	}
 	
 	public void LoadLeaderboard() {
+#if UNITY_ANDROID
+		PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIt5fH8s4EEAIQBw");
+#elif UNITY_IPHONE
 		Social.ShowLeaderboardUI ();
+#endif
 	}
 
 	public void ReportScore(long score) {
-		Social.ReportScore (score, "point", success => {
+#if UNITY_ANDROID
+		string id = "CgkIt5fH8s4EEAIQBw";
+#elif UNITY_IPHONE
+		string id = "point";
+#endif
+		Social.ReportScore (score, id, success => {
 			Debug.Log(success ? "Reported score successfully" : "Failed to report score");
 		});
 	}

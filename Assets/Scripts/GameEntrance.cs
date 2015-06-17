@@ -29,6 +29,11 @@ public class GameEntrance : MonoBehaviour {
 
 		Game.soundOn = PlayerPrefs.GetInt ("sound", 1) > 0 ? true : false;
 		Game.musicOn = PlayerPrefs.GetInt ("music", 1) > 0 ? true : false;
+
+		#if UNITY_ANDROID
+		GameObject gameCenter = GameObject.Find ("GameCenter");
+		gameCenter.SetActive(false);
+		#endif
 	}
 
 	void Update() {
@@ -99,9 +104,13 @@ public class GameEntrance : MonoBehaviour {
 		sound.GetComponent<Animator> ().Play ("Sound");
 		sound.GetComponent<Toggle> ().interactable = false;
 
+#if UNITY_ANDROID
+		
+#else
 		GameObject gameCenter = GameObject.Find ("GameCenter");
 		gameCenter.GetComponent<Animator> ().Play ("GameCenter");
 		gameCenter.GetComponent<Button> ().interactable = false;
+#endif
 	}
 
 	private void RequestInterstitial()
@@ -109,9 +118,9 @@ public class GameEntrance : MonoBehaviour {
 		#if UNITY_EDITOR
 		string adUnitId = "unused";
 		#elif UNITY_ANDROID
-		string adUnitId = "ca-app-pub-6987930267649699/2626140969";
+		string adUnitId = "ca-app-pub-7896569660771969/4598629737";
 		#elif UNITY_IPHONE
-		string adUnitId = "ca-app-pub-6987930267649699/4387455369";
+		string adUnitId = "ca-app-pub-7896569660771969/9168430136";
 		#else
 		string adUnitId = "unexpected_platform";
 		#endif

@@ -29,8 +29,15 @@ public class PaperEmitter : MonoBehaviour {
 
 	public float scoreInterval = 0.2f;
 	// Use this for initialization
+
+	public GameObjectPool gameObjectPool; 
+
 	void Start () {
 		status = Game.status;
+		gameObjectPool = new GameObjectPool((GameObject) Resources.Load ("TrianglePaper"), 100,
+		                                    (gameObject) => {
+			
+		}, false);
 	}
 	
 	// Update is called once per frame
@@ -59,7 +66,8 @@ public class PaperEmitter : MonoBehaviour {
 					
 					Vector3 vOffset = new Vector3(Random.Range(transform.position.x - offsetXNeg, transform.position.x + offsetXPos), transform.position.y, transform.position.z);
 					
-					GameObject paper = (GameObject) Instantiate ((GameObject) Resources.Load ("TrianglePaper"), vOffset, new Quaternion());
+					//GameObject paper = (GameObject) Instantiate ((GameObject) Resources.Load ("TrianglePaper"), vOffset, new Quaternion());
+					GameObject paper = gameObjectPool.Spawn(vOffset, new Quaternion());
 					paper.transform.SetParent(transform);
 
 					Rigidbody2D rigidbody = paper.GetComponent<Rigidbody2D> ();
@@ -92,4 +100,15 @@ public class PaperEmitter : MonoBehaviour {
 		maxForceY += forceMovement;
 		Invoke ("invodeDifficultAddition", timeToBeMoreDifficult);
 	}
+
+	void ResetActiona(GameObject gameObject) {
+		gameObject.SetActive(true);	
+		Vector3 vOffset = new Vector3(Random.Range(transform.position.x - offsetXNeg, transform.position.x + offsetXPos), transform.position.y, transform.position.z);
+		gameObject.transform.position = vOffset;
+		Rigidbody2D rigidbody = gameObject.GetComponent<Rigidbody2D> ();
+		rigidbody.mass = Random.Range(minMass, maxMass);
+		rigidbody.AddForce(new Vector2(0, Random.Range(-minForceY, -maxForceY)));
+
+	}
+	
 }
