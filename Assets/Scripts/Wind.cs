@@ -19,6 +19,8 @@ public class Wind : MonoBehaviour {
 	public float timeToBeMoreDifficult = 10;
 	public float strenthMovement = 1;
 
+	public float maxStr;
+
 	private Game.GameStatus status;
 	void Start () {
 		strength = new Vector2 (defaultStrength, 0);

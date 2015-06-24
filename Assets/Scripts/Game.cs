@@ -17,5 +17,21 @@ public static class Game
 
 	public static bool soundOn = false;
 	public static bool musicOn = false;
+
+//	public class Level {
+//		int paperPerSec;
+//		float velocity;
+//		float wind;
+//	}	
+
+//	public static Level[] level = new Level [] {
+//		{6, 100, 0.5f},
+//		{7, 150, 1},
+//		{8, 200, 1.5f},
+//		{10, 180, 1.5f},
+//		{10, 180, 1.5f},
+//	};
+
+
 }
 

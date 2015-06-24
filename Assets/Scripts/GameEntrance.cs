@@ -14,7 +14,8 @@ public class GameEntrance : MonoBehaviour {
 	private InterstitialAd interstitial;
 	public float interval = 60;
 	static private float time = 0;
-
+	public Transform guide;
+	public Transform guideBackground;
 	bool isUIOnclick = false;
 
 	// Use this for initialization
@@ -52,16 +53,22 @@ public class GameEntrance : MonoBehaviour {
 //		}
 
 		if (Game.status == Game.GameStatus.Welcome) {
-
 #if UNITY_EDITOR
-			if (Input.GetMouseButtonDown (0) && (!EventSystem.current.IsPointerOverGameObject() || isUIOnclick)) {
+			if (Input.GetMouseButtonDown (0) && (!EventSystem.current.IsPointerOverGameObject() || isUIOnclick || guide.gameObject.activeSelf)) {
 #else
-			if (Input.GetMouseButtonDown (0) && (!EventSystem.current.IsPointerOverGameObject(0) || isUIOnclick)) {
+				if (Input.GetMouseButtonDown (0) && (!EventSystem.current.IsPointerOverGameObject(0) || isUIOnclick|| guide.gameObject.activeSelf)) {
 #endif
-				
-				
-//				Debug.Log ("event system " + EventSystem.current.IsPointerOverGameObject().ToString());
-				startGame();
+				if (PlayerPrefs.GetInt("firstplay", 0) == 0) {
+					guide.gameObject.SetActive(true);
+					guideBackground.gameObject.SetActive(true);	
+					Invoke ("SetFirstPlay", 3);
+				}  else {
+					if (guide.gameObject.activeInHierarchy && guideBackground.gameObject.activeInHierarchy) {
+						guide.GetComponent<Animator>().Play("GuideEnd");
+						guideBackground.GetComponent<Animator>().Play("GuideBackgroundEnd");
+					}
+					startGame();
+				}
 			}
 		}
 	}
@@ -69,6 +76,11 @@ public class GameEntrance : MonoBehaviour {
 	public void startGame() {
 		playGameStartAni ();
 		Game.setGameStatus (Game.GameStatus.Enjoy);
+	}
+
+	public void SetFirstPlay() {
+		PlayerPrefs.SetInt("firstplay", 1);
+			Debug.Log ("ddd");
 	}
 
 	void playGameStartAni() {

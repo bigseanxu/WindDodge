@@ -10,7 +10,6 @@ public class BestTime : MonoBehaviour {
 	}
 
 	void OnEnable() {
-		Debug.Log ("best time on enable");
 		GetComponent<Text> ().text = PlayerPrefs.GetInt ("best").ToString ();
 	}
 

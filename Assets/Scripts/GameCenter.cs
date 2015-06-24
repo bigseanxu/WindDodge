@@ -2,8 +2,10 @@
 using System.Collections;
 using UnityEngine.SocialPlatforms.GameCenter;
 using UnityEngine.SocialPlatforms;
+#if UNITY_ANDROID 
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+#endif
 public class GameCenter : MonoBehaviour {
 #if UNITY_ANDROID
 	bool isPlayGamesPlayformActivate = false;
@@ -76,12 +78,15 @@ public class GameCenter : MonoBehaviour {
 #elif UNITY_IPHONE
 		Social.ShowLeaderboardUI ();
 #endif
+#if UNITY_EDITOR
+		PlayerPrefs.DeleteAll();
+#endif
 	}
 
 	public void ReportScore(long score) {
 #if UNITY_ANDROID
 		string id = "CgkIt5fH8s4EEAIQBw";
-#elif UNITY_IPHONE
+#else
 		string id = "point";
 #endif
 		Social.ReportScore (score, id, success => {
